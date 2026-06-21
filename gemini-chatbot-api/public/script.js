@@ -178,9 +178,7 @@ function renderMarkdownToHtml(markdownText) {
       flushParagraph();
       flushList();
       const level = headingMatch[1].length;
-      blocks.push(
-        `<p class="chat-md-heading chat-md-heading-${level}">${formatInlineMarkdown(headingMatch[2])}</p>`,
-      );
+      blocks.push(`<p class="chat-md-heading chat-md-heading-${level}">${formatInlineMarkdown(headingMatch[2])}</p>`);
       continue;
     }
 
@@ -228,10 +226,5 @@ function formatInlineMarkdown(text) {
 }
 
 function escapeHtml(text) {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#39;");
 }
